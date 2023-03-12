@@ -91,15 +91,11 @@ document.querySelector("#button").addEventListener("click",function(){
       
     var img = document.querySelector('.main');
     var index = 0;
-    var iterations = 0;
       
     var updateImage = function() {
-    /* reset index to zero if current index is greater than number of images.
-        * increment iterations variable since it means we've done one whole loop.
-        */
+    
     if (index >= images.length) {
         index = 0;
-        iterations++;
     }
     
     // set the background image
@@ -107,17 +103,6 @@ document.querySelector("#button").addEventListener("click",function(){
     img.style.backgroundSize = 'cover';
     img.style.transition = 'all 2s';
     
-    /* clear interval (stop timer) when we've reached
-        * the number of iterations allowed.
-        */
-    if (iterations >= 2) {
-        clearInterval(interval);
-    } else {
-        /* increment current index in order to get next image
-        * when this function gets called again.
-        */
-        index++;
-    }
     }
     updateImage();
     var interval = setInterval(updateImage, 5000);
