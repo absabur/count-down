@@ -55,65 +55,72 @@ document.querySelector("#button").addEventListener("click",function(){
             month = montName[i];
         }
     }
-    eventName.innerText = eventNameInput.value
-    eventName2.innerText = eventNameInput.value
-    let endDate = `${day} ${month} ${year} ${hour}:${minute} ${apm}`;
-    displayEventDate.innerText = endDate
-    
-    overlay.style.display = "block"; 
-    detailsForm.style.display = "none"; 
-
-    function clock(){
-        const end = new Date(endDate);
-        const now = new Date();
-        let diff = (end - now)/1000;
+    if (year == "" || month == "" || day == "" || hour == "" || minute == "" || apm == ""){
+        alert("Fill up all field to get proper countdown.")
+    }else if (parseInt(month) > 12 || parseInt(day) > 31  || parseInt(hour) > 12 || parseInt(minute) > 60){
+        alert("Provide the valid input.")
+    }else{
+        eventName.innerText = eventNameInput.value
+        eventName2.innerText = eventNameInput.value
+        let endDate = `${day} ${month} ${year} ${hour}:${minute} ${apm}`;
+        displayEventDate.innerText = endDate
         
-        if (diff < 0) return;
+        overlay.style.display = "block"; 
+        detailsForm.style.display = "none"; 
 
-        displayDate[0].value = Math.floor(diff/3600/24);
-        displayDate[1].value = Math.floor((diff/3600)%24);
-        displayDate[2].value = Math.floor((diff/60)%60);
-        displayDate[3].value = Math.floor((diff)%60);
+        function clock(){
+            const end = new Date(endDate);
+            const now = new Date();
+            let diff = (end - now)/1000;
+            
+            if (diff < 0) return;
 
-    }
-    clock();
-    setInterval(() => {
+            displayDate[0].value = Math.floor(diff/3600/24);
+            displayDate[1].value = Math.floor((diff/3600)%24);
+            displayDate[2].value = Math.floor((diff/60)%60);
+            displayDate[3].value = Math.floor((diff)%60);
+
+        }
         clock();
-    }, 1000);
+        setInterval(() => {
+            clock();
+        }, 1000);
 
-    var images = [
-        'images/back0.jpg',
-        'images/back1.jpg',
-        'images/back2.jpg',
-        'images/back3.jpg',
-        'images/back4.jpg'
-    ];
-      
-    var img = document.querySelector('.main');
-    var index = 0;
-      
-    var updateImage = function() {
-    
-        if (index >= images.length) {
-            index = 0;
+        var images = [
+            'images/back0.jpg',
+            'images/back1.jpg',
+            'images/back2.jpg',
+            'images/back3.jpg',
+            'images/back4.jpg'
+        ];
+        
+        var img = document.querySelector('.main');
+        var index = 0;
+        
+        var updateImage = function() {
+        
+            if (index >= images.length) {
+                index = 0;
+            }
+            
+            // set the background image
+            img.style.background = 'url(' + images[index] + ')';
+            img.style.backgroundSize = 'cover';
+            img.style.transition = 'all 2s';
+
+            index++;
+        }
+        updateImage();
+        setInterval(updateImage, 5000);
+        
+        setInterval(() => {
+            var d = new Date();          
+            var n = d.toLocaleString([], { hour12: true});
+            document.querySelector(".current-time").innerText = `Current time: ${n}`;
+        }, 1000);
         }
         
-        // set the background image
-        img.style.background = 'url(' + images[index] + ')';
-        img.style.backgroundSize = 'cover';
-        img.style.transition = 'all 2s';
-
-        index++;
-    }
-    updateImage();
-    setInterval(updateImage, 5000);
-    
-    setInterval(() => {
-        var d = new Date();          
-        var n = d.toLocaleString([], { hour12: true});
-        document.querySelector(".current-time").innerText = `Current time: ${n}`;
-    }, 1000);
-    
+        
     
 })
 
