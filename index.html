@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Count Down</title>
+</head>
+<body>
+    <div class="main">
+        <div class="details-form">
+            <div class="form">
+                <div class="name">
+                    <h3>Set countdown title:</h3>
+                    <input type="text" placeholder="Event Name..." id="event-name-input" value="">
+                </div>
+                <div class="head-timer">
+                    <h1>Set event date and time</h1>
+                </div>
+                <div class="timer">
+                    <div class="date">
+                        <div class="day">
+                            <label for="day">Day:</label>
+                            <input placeholder="dd" type="text"  pattern="[0-9]*" maxlength="2" size="3" id="day" name="day" >
+                        </div>
+                        <div class="month">
+                            <label for="month">Month:</label>
+                            <input placeholder="mm" type="text" maxlength="2" size="3" id="month" name="month" >
+                        </div>
+                        <div class="year">
+                            <label for="year">Year:</label>
+                            <input placeholder="yyyy" type="text" pattern="[0-9]*" maxlength="4" size="5" id="year" name="year">
+                        </div>
+                    </div>
+                    <div class="time-hour">
+                        <div class="hour">
+                            <label for="hour">Hour:</label>
+                            <input placeholder="hh" type="text" pattern="[0-9]*" maxlength="2" size="3" id="hour" name="hour">
+                        </div>
+                        <div class="minute">
+                            <label for="minute">Minute:</label>
+                            <input placeholder="mm" type="text" pattern="[0-9]*" maxlength="2" size="3" id="minute" naminuteme="minute">
+                        </div>
+                        <div class="apm">
+                            <label for="apm">AM/PM:</label>
+                            <input placeholder="AM" type="text" maxlength="2" size="3" id="apm" naminuteme="apm">
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button id="button">Create Countdown</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="current-time">
+
+            </div>
+            <div class="title"><p><span class="event-name">EVENT</span> Date</p>  <p class="event-date"></p></div>
+            <div class="title title1"><p><span class="event-name2">EVENT</span> in:</p></div>
+            <div class="col">
+                <div class="flr">
+                    <div class="display">
+                        <input type="text" readonly value="0">
+                        <label for="">Days</label>
+                    </div>
+                    <div class="display">
+                        <input type="text" readonly value="0">
+                        <label for="">Hours</label>
+                    </div>
+                </div>
+                <div class="flr">
+                    <div class="display">
+                        <input type="text" readonly value="0">
+                        <label for="">Minutes</label>
+                    </div>
+                    <div class="display">
+                        <input type="text" style="background-color: rgb(255, 9, 91); color: white;" readonly value="0">
+                        <label for="">Seconds</label>
+                    </div>
+                </div>
+            </div>
+            <div class="to-form-div">
+                <button class="to-form">Set another event</button>
+            </div>
+            <div class="footer">
+                <div class="footer-menu">
+                    <a href="https://absabur.github.io/Abdus_Sabur/" target="_blank">Web site</a>
+                    <a href="https://absabur.github.io/Abdus_Sabur/#about-me-id" target="_blank">About Me</a>
+                    <a href="https://absabur.github.io/Abdus_Sabur/#skills" target="_blank">Skills</a>
+                    <a href="https://absabur.github.io/Abdus_Sabur/#contact" target="_blank">Contact Me</a>
+                </div>
+        
+                <div class="footer-desc">
+                    &copy; Abdus Sabur 2023. Developed by ABS.
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+    
+
+
+    <script src="index.js"></script>
+</body>
+</html>
