@@ -93,7 +93,8 @@
     /* display: none;  */
 }
 .form{
-    height: 60vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 65vh;
     width: 40%;
     background-color: white;
     box-shadow: 0 5px 16px black;
@@ -293,6 +294,19 @@ p{
     }
     .form{
         width: 80%;
+        height: 80vh;
+    }
+    .date, .time-hour, .btn{
+        margin: 1rem;
+    }
+    .to-form-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .to-form{
+        font-size: 1rem;
+        margin-bottom: 1rem;
     }
     
   }
