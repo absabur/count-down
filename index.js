@@ -94,18 +94,19 @@ document.querySelector("#button").addEventListener("click",function(){
       
     var updateImage = function() {
     
-    if (index >= images.length) {
-        index = 0;
-    }
-    
-    // set the background image
-    img.style.background = 'url(' + images[index] + ')';
-    img.style.backgroundSize = 'cover';
-    img.style.transition = 'all 2s';
-    
+        if (index >= images.length) {
+            index = 0;
+        }
+        
+        // set the background image
+        img.style.background = 'url(' + images[index] + ')';
+        img.style.backgroundSize = 'cover';
+        img.style.transition = 'all 2s';
+
+        index++;
     }
     updateImage();
-    var interval = setInterval(updateImage, 5000);
+    setInterval(updateImage, 5000);
     
     setInterval(() => {
         var d = new Date();          
