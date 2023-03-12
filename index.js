@@ -125,11 +125,10 @@ document.querySelector("#button").addEventListener("click",function(){
 })
 
 
-
 let toForm = document.querySelector(".to-form");
 toForm.addEventListener("click",function(){
-    overlay.style.display = "none"; 
-    detailsForm.style.display = "block"; 
+    location.reload(); 
 })
+
 
 
