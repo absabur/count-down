@@ -105,8 +105,7 @@ document.querySelector("#button").addEventListener("click",function(){
     // set the background image
     img.style.background = 'url(' + images[index] + ')';
     img.style.backgroundSize = 'cover';
-    img.style.transition = '1s';
-    img.backgroundPosition = "fixed";
+    img.style.transition = 'all 2s';
     
     /* clear interval (stop timer) when we've reached
         * the number of iterations allowed.
