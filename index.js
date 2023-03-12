@@ -7,14 +7,7 @@ let overlay = document.querySelector(".overlay");
 
 let detailsForm = document.querySelector(".details-form");
 
-
-
-
 let displayEventDate = document.querySelector(".event-date");
-
-
-
-
 
 // document.querySelector(".event-date").innerText = endDate;
 
@@ -119,9 +112,7 @@ document.querySelector("#button").addEventListener("click",function(){
             document.querySelector(".current-time").innerText = `Current time: ${n}`;
         }, 1000);
         }
-        
-        
-    
+            
 })
 
 
